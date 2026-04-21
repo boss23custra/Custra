@@ -122,7 +122,9 @@ export default function App() {
       {/* EMAIL CAPTURE */}
       <section style={{ marginTop: "80px" }}>
         <h2>Join the exclusive waitlist</h2>
-
+<p style={{ opacity: 0.6, marginTop: "8px" }}>
+  Limited early access for D2C owners and performance marketers building high-performance ads
+</p>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
