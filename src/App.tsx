@@ -119,13 +119,31 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* EMAIL CAPTURE */}
       <section style={{ marginTop: "80px" }}>
-        <h2>Get Early Access</h2>
+        <h2>Join the exclusive waitlist</h2>
 
-        <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const form = e.target as HTMLFormElement;
+            const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+
+            await fetch("https://script.google.com/macros/s/AKfycbzMOP44XCmAv8By8yzMj68IYtoCpgci6eEdlQk-z7M50DSwccveRWLLcMASxHzghhAt/exec", {
+              method: "POST",
+              body: JSON.stringify({ email }),
+            });
+
+            alert("You're on the list 🚀");
+            form.reset();
+          }}
+          style={{ marginTop: "20px", display: "flex", gap: "10px" }}
+        >
           <input
+            type="email"
+            name="email"
             placeholder="Enter your email"
+            required
             style={{
               padding: "12px",
               borderRadius: "8px",
@@ -137,6 +155,7 @@ export default function App() {
           />
 
           <button
+            type="submit"
             style={{
               padding: "12px 20px",
               background: "#6366f1",
@@ -148,7 +167,7 @@ export default function App() {
           >
             Join
           </button>
-        </div>
+        </form>
 
         <p style={{ marginTop: "12px", opacity: 0.6 }}>
           Or reach us at: hello@getcustra.com
