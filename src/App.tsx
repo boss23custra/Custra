@@ -175,6 +175,33 @@ export default function App() {
           Or reach us at: hello@getcustra.com
         </p>
       </section>
+      <footer
+  style={{
+    marginTop: "100px",
+    paddingTop: "40px",
+    borderTop: "1px solid #222",
+    display: "flex",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: "20px",
+    fontSize: "14px",
+    opacity: 0.8,
+  }}
+>
+  <div>
+    <h3 style={{ marginBottom: "8px" }}>Custra</h3>
+    <p>Built for marketers obsessed with ROAS, by those who scale it</p>
+  </div>
+
+  <div>
+    <p>Contact</p>
+    <p>hello@getcustra.com</p>
+  </div>
+
+  <div style={{ width: "100%", marginTop: "20px", opacity: 0.6 }}>
+    © 2026 Custra
+  </div>
+</footer>
     </div>
   );
 }
