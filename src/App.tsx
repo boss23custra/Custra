@@ -177,29 +177,38 @@ export default function App() {
       </section>
       <footer
   style={{
-    marginTop: "100px",
-    paddingTop: "40px",
-    borderTop: "1px solid #222",
-    display: "flex",
-    justifyContent: "space-between",
-    flexWrap: "wrap",
-    gap: "20px",
-    fontSize: "14px",
-    opacity: 0.8,
+    marginTop: "60px",
+    padding: "30px 20px",
+    background: "linear-gradient(180deg, #020617 0%, #01030a 100%)",
+    borderTop: "1px solid #1e293b",
   }}
 >
-  <div>
-    <h3 style={{ marginBottom: "8px" }}>Custra</h3>
-    <p>Built for marketers obsessed with ROAS, by those who scale it</p>
-  </div>
+  <div
+    style={{
+      maxWidth: "1100px",
+      margin: "0 auto",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: "16px",
+    }}
+  >
+    {/* Left */}
+    <div>
+      <h3 style={{ margin: 0 }}>Custra</h3>
+      <p style={{ margin: "6px 0 0", fontSize: "13px", opacity: 0.7 }}>
+        Built for performance marketers, by Performance Marketers
+      </p>
+    </div>
 
-  <div>
-    <p>Contact</p>
-    <p>hello@getcustra.com</p>
-  </div>
-
-  <div style={{ width: "100%", marginTop: "20px", opacity: 0.6 }}>
-    © 2026 Custra
+    {/* Right */}
+    <div style={{ textAlign: "right", fontSize: "13px", opacity: 0.8 }}>
+      <p style={{ margin: 0 }}>hello@getcustra.com</p>
+      <p style={{ margin: "4px 0 0", opacity: 0.5 }}>
+        © 2026 Custra
+      </p>
+    </div>
   </div>
 </footer>
     </div>
