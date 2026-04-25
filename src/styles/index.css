@@ -90,11 +90,26 @@ input {
   margin-top: 0;
 }
 
+/* =========================
+   GLOBAL TYPOGRAPHY
+========================= */
+
+h1 {
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+p {
+  font-size: 16px;
+}
+
 .hero-title {
   margin: 0;
   max-width: 1240px;
-  font-size: 42px;
-  line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
@@ -149,9 +164,9 @@ input {
   line-height: 1.5;
 }
 
-.feature-grid {
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -255,7 +270,7 @@ input {
     font-size: 24px;
   }
 
-  .feature-grid {
+  .features-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -305,11 +320,6 @@ input {
     max-width: 100%;
     font-size: 22px;
     line-height: 1.42;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
   }
 
   .feature-card {
@@ -366,11 +376,6 @@ input {
     font-size: 0.88rem;
   }
 
-  .hero-title {
-    font-size: 26px;
-    line-height: 1.16;
-  }
-
   .hero-copy,
   .hero-support,
   .section-copy,
@@ -402,54 +407,34 @@ input {
 }
 
 /* =========================
-   MOBILE OPTIMIZATION
+   MOBILE FIX (REAL FIX)
 ========================= */
 
 @media (max-width: 768px) {
-  
-  /* Page padding */
-  body {
-    padding: 0 16px;
-  }
-
-  /* Headline */
   h1 {
-    font-size: 32px !important;
+    font-size: 34px !important;
     line-height: 1.2;
   }
 
-  /* Section titles */
   h2 {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
 
-  /* Paragraph text */
   p {
-    font-size: 15px !important;
-    line-height: 1.6;
+    font-size: 16px !important;
   }
 
-  /* Buttons */
   button {
     font-size: 16px !important;
-    padding: 14px 18px !important;
+    padding: 14px 16px !important;
   }
 
-  /* Input field */
   input {
     font-size: 16px !important;
     padding: 14px !important;
   }
 
-  /* Feature cards spacing */
-  .features {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  /* Sections spacing */
-  section {
-    margin-top: 48px !important;
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
