@@ -58,6 +58,7 @@ export default function App() {
             className="hero-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            style={{ fontSize: "48px", lineHeight: "1.1" }}
           >
             Turn customer feedback into{" "}
             <span className="hero-highlight">high-converting ad angles</span>
@@ -98,7 +99,7 @@ export default function App() {
         <section className="content-section">
           <h2 className="section-title">Features</h2>
 
-          <div className="feature-grid">
+          <div className="feature-grid features">
             {features.map((feature) => (
               <div key={feature.title} className="feature-card">
                 <h3 className="feature-title">{feature.title}</h3>
