@@ -29,9 +29,9 @@ input {
 }
 
 .landing-page {
-  width: min(1120px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 40px 0 32px;
+  width: 100%;
+  margin: 0;
+  padding: 40px 40px 32px;
 }
 
 .landing-header {
@@ -44,7 +44,7 @@ input {
 
 .brand {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
 }
 
@@ -92,11 +92,11 @@ input {
 
 .hero-title {
   margin: 0;
-  max-width: 1100px;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.04;
+  max-width: 1240px;
+  font-size: 42px;
+  line-height: 1.12;
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .hero-highlight {
@@ -115,8 +115,8 @@ input {
 
 .hero-copy {
   margin: 20px 0 0;
-  max-width: 700px;
-  font-size: 1.15rem;
+  max-width: 760px;
+  font-size: 1rem;
   line-height: 1.45;
 }
 
@@ -127,14 +127,14 @@ input {
 .hero-support {
   margin: 18px 0 0;
   max-width: 680px;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .problem-copy {
   margin: 0;
   max-width: 760px;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.28;
+  font-size: 28px;
+  line-height: 1.4;
   font-weight: 700;
 }
 
@@ -242,54 +242,91 @@ input {
 }
 
 @media (max-width: 1024px) {
+  .landing-page {
+    padding-inline: 28px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    max-width: 900px;
+  }
+
+  .problem-copy {
+    font-size: 24px;
+  }
+
   .feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 820px) {
   .landing-page {
-    width: min(100% - 32px, 680px);
-    padding: 24px 0 28px;
+    padding: 24px 20px 28px;
   }
 
   .landing-header {
+    align-items: flex-start;
     margin-bottom: 40px;
   }
 
   .brand {
-    font-size: 1.9rem;
+    font-size: 2.3rem;
   }
 
-  .nav-button,
-  .submit-button,
-  .primary-button {
-    width: 100%;
+  .nav-button {
+    width: auto;
   }
 
   .hero-section,
   .problem-section,
   .content-section,
   .landing-footer {
-    margin-top: 56px;
+    margin-top: 52px;
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 10vw, 3.2rem);
-    line-height: 1.08;
+    max-width: 100%;
+    font-size: 32px;
+    line-height: 1.14;
   }
 
   .hero-copy {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .hero-support {
     font-size: 1rem;
   }
 
   .problem-copy {
-    font-size: clamp(1.9rem, 8vw, 2.6rem);
-    line-height: 1.32;
+    max-width: 100%;
+    font-size: 22px;
+    line-height: 1.42;
   }
 
   .feature-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature-card {
+    padding: 18px;
+  }
+
+  .feature-title {
+    font-size: 1.05rem;
+  }
+
+  .feature-copy,
+  .section-copy,
+  .step-item,
+  .trust-copy,
+  .footer-copy,
+  .footer-email {
+    font-size: 0.98rem;
   }
 
   .waitlist-form {
@@ -309,17 +346,29 @@ input {
 
 @media (max-width: 480px) {
   .landing-page {
-    width: min(100% - 24px, 560px);
-    padding-top: 20px;
+    padding: 18px 16px 24px;
   }
 
   .landing-header {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
   }
 
   .brand {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  .nav-button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 1.16;
   }
 
   .hero-copy,
@@ -330,10 +379,24 @@ input {
   .trust-copy,
   .footer-copy,
   .footer-email {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+  }
+
+  .primary-button,
+  .submit-button {
+    width: 100%;
+  }
+
+  .problem-copy {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
   }
 
   .feature-card {
-    padding: 18px;
+    padding: 16px;
   }
 }
