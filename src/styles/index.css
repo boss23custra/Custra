@@ -400,3 +400,56 @@ input {
     padding: 16px;
   }
 }
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width: 768px) {
+  
+  /* Page padding */
+  body {
+    padding: 0 16px;
+  }
+
+  /* Headline */
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+
+  /* Section titles */
+  h2 {
+    font-size: 24px !important;
+  }
+
+  /* Paragraph text */
+  p {
+    font-size: 15px !important;
+    line-height: 1.6;
+  }
+
+  /* Buttons */
+  button {
+    font-size: 16px !important;
+    padding: 14px 18px !important;
+  }
+
+  /* Input field */
+  input {
+    font-size: 16px !important;
+    padding: 14px !important;
+  }
+
+  /* Feature cards spacing */
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Sections spacing */
+  section {
+    margin-top: 48px !important;
+  }
+}
