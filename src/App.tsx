@@ -31,6 +31,10 @@ const steps = [
 ];
 
 export default function App() {
+  const scrollToWaitlist = () => {
+    document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div
       style={{
@@ -52,6 +56,7 @@ export default function App() {
       >
         <h2>Custra</h2>
         <button
+          onClick={scrollToWaitlist}
           style={{
             padding: "10px 16px",
             background: "#6366f1",
@@ -84,6 +89,7 @@ export default function App() {
 
         <div style={{ marginTop: "24px", display: "flex", gap: "12px" }}>
           <button
+            onClick={scrollToWaitlist}
             style={{
               padding: "12px 20px",
               background: "#22d3ee",
