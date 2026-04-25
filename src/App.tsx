@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
 const features = [
   {
@@ -31,8 +32,13 @@ const steps = [
 ];
 
 export default function App() {
+  const emailInputRef = useRef<HTMLInputElement | null>(null);
+
   const scrollToWaitlist = () => {
     document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" });
+    window.setTimeout(() => {
+      emailInputRef.current?.focus();
+    }, 400);
   };
 
   return (
@@ -205,6 +211,7 @@ export default function App() {
           style={{ marginTop: "20px", display: "flex", gap: "10px" }}
         >
           <input
+            ref={emailInputRef}
             type="email"
             name="email"
             placeholder="Enter your email"
