@@ -234,8 +234,29 @@ export default function App() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ marginTop: "80px", opacity: 0.6 }}>
-        Built for marketers obsessed with ROAS
+      <footer
+        style={{
+          marginTop: "80px",
+          paddingTop: "24px",
+          borderTop: "1px solid #1e293b",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: "16px",
+          flexWrap: "wrap",
+        }}
+      >
+        <div>
+          <h3 style={{ margin: 0 }}>Custra</h3>
+          <p style={{ margin: "6px 0 0", opacity: 0.6 }}>
+            Built for marketers obsessed with ROAS
+          </p>
+        </div>
+
+        <div style={{ textAlign: "right", opacity: 0.7 }}>
+          <p style={{ margin: 0 }}>hello@getcustra.com</p>
+          <p style={{ margin: "4px 0 0" }}>(c) 2026 Custra</p>
+        </div>
       </footer>
     </div>
   );
