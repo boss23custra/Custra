@@ -135,7 +135,7 @@ function Hero() {
       <div style={{
         position: 'absolute', top: 32, right: 40,
         fontFamily: fMono, fontSize: 10, color: P.mutedDk, letterSpacing: '0.12em',
-      }}>BATCH 02 · MAY 2026 · 487 ON WAITLIST</div>
+      }}>BATCH 01 · MAY 2026 · 33 ON WAITLIST</div>
 
       <div style={{
         position: 'relative', maxWidth: 1240, margin: '0 auto',
@@ -158,12 +158,12 @@ function Hero() {
           letterSpacing: '-0.035em', lineHeight: 0.98,
           margin: 0, maxWidth: 940, color: P.cream,
         }}>
-          The ad angle that's{' '}
+          The ad angle that will{' '}
           <em style={{
             fontFamily: fSerif, fontStyle: 'italic', fontWeight: 400,
             letterSpacing: '-0.02em',
           }}>actually</em>{' '}
-          lowering your CAC.
+          lower your CAC.
         </h1>
 
         <p style={{
@@ -172,12 +172,12 @@ function Hero() {
           color: P.cream2, fontWeight: 400,
           textWrap: 'pretty',
         }}>
-          Custra mines reviews, ad comments and customer DMs for the angles that convert — so your next creative test isn't a guess. Built for D2C founders running their own ads.
+          Custra mines reviews, ad comments, customer DMs and online communities for the ideas that convert into direct response ad angles — so your next creative test isn't a guess.
         </p>
 
         {/* email capture */}
         <form
-          onSubmit={(e) => submitWaitlist(e, "You're on the list — we'll be in touch.")}
+          onSubmit={(e) => submitWaitlist(e, "You're on the list. we'll be in touch.")}
           style={{
             marginTop: 36, display: 'flex', gap: 10, maxWidth: 520,
             background: 'rgba(255,255,255,0.06)',
@@ -189,7 +189,7 @@ function Hero() {
             type="email"
             name="email"
             required
-            placeholder="founder@yourbrand.com"
+            placeholder="name@yourbrand.com"
             style={{
               flex: 1, background: 'transparent', border: 0, outline: 'none',
               fontFamily: fSans, fontSize: 16, color: P.cream,
@@ -223,7 +223,7 @@ function Hero() {
             ))}
           </div>
           <span style={{ fontFamily: fSans, fontSize: 14, color: P.cream2 }}>
-            <strong style={{ color: P.cream, fontWeight: 500 }}>487 D2C founders</strong> already on the list — batches roll out monthly.
+            <strong style={{ color: P.cream, fontWeight: 500 }}>33 D2C founders</strong> already on the list
           </span>
         </div>
       </div>
@@ -295,7 +295,7 @@ function Showcase() {
                 width: 6, height: 6, borderRadius: '50%', background: '#22B86D',
                 boxShadow: '0 0 0 3px rgba(34,184,109,0.18)',
               }} />
-              Live · refreshed 4m ago
+              
             </span>
           </div>
         </div>
