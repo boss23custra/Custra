@@ -23,6 +23,22 @@ const P = {
 const fSans  = "'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, system-ui, sans-serif";
 const fSerif = "'Instrument Serif', 'Times New Roman', serif";
 const fMono  = "'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace";
+const WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzMOP44XCmAv8By8yzMj68IYtoCpgci6eEdlQk-z7M50DSwccveRWLLcMASxHzghhAt/exec';
+
+async function submitWaitlist(e, successMessage) {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const input = form.elements.email || form.querySelector('input[type="email"]');
+  const email = input.value.trim();
+
+  await fetch(WAITLIST_ENDPOINT, {
+    method: 'POST',
+    body: JSON.stringify({ email }),
+  });
+
+  alert(successMessage);
+  form.reset();
+}
 
 // ─── The mark ────────────────────────────────────────────────────────
 function CustraMark({ size = 24, color, opacity = 1, decorative = true }) {
@@ -161,7 +177,7 @@ function Hero() {
 
         {/* email capture */}
         <form
-          onSubmit={(e) => { e.preventDefault(); alert("You're on the list — we'll be in touch."); }}
+          onSubmit={(e) => submitWaitlist(e, "You're on the list — we'll be in touch.")}
           style={{
             marginTop: 36, display: 'flex', gap: 10, maxWidth: 520,
             background: 'rgba(255,255,255,0.06)',
@@ -171,6 +187,7 @@ function Hero() {
         >
           <input
             type="email"
+            name="email"
             required
             placeholder="founder@yourbrand.com"
             style={{
@@ -744,7 +761,7 @@ function FinalCTA() {
         </p>
 
         <form
-          onSubmit={(e) => { e.preventDefault(); alert("You're on the list."); }}
+          onSubmit={(e) => submitWaitlist(e, "You're on the list.")}
           style={{
             margin: '36px auto 0', display: 'flex', gap: 10, maxWidth: 520,
             background: 'rgba(255,255,255,0.06)',
@@ -754,6 +771,7 @@ function FinalCTA() {
         >
           <input
             type="email"
+            name="email"
             required
             placeholder="founder@yourbrand.com"
             style={{
