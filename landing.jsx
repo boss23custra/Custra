@@ -554,10 +554,10 @@ function HowItWorks() {
 // ─── Case studies / proof ────────────────────────────────────────────
 function Cases() {
   const cases = [
-    { cat: 'Sleep & travel',  quote: '"You can sleep through it on a plane."',         cacBefore: '$24.60', cacAfter: '$14.20', roas: '4.8×', delta: -42 },
+    { cat: 'Sleep & travel',  quote: '"You can sleep through it on a plane."',         cacBefore: '$24.60', cacAfter: '$8.20', roas: '4.8×', delta: -42 },
     { cat: 'Direct coffee',   quote: '"It survives my dishwasher."',                    cacBefore: '$18.10', cacAfter: '$11.40', roas: '3.6×', delta: -37 },
     { cat: 'Skincare',        quote: '"It doesn\'t make my eyes water like the others."', cacBefore: '$31.20', cacAfter: '$19.80', roas: '3.1×', delta: -36 },
-    { cat: 'Pet food',        quote: '"My picky dog actually finished the bowl."',     cacBefore: '$22.50', cacAfter: '$15.20', roas: '2.9×', delta: -32 },
+    { cat: 'Pet food',        quote: '"My picky dog actually finished the bowl."',     cacBefore: '$22.50', cacAfter: '$11.20', roas: '2.9×', delta: -32 },
   ];
   return (
     <section id="cases" style={{
@@ -645,7 +645,7 @@ function Manifesto() {
         margin: '24px 0 0', color: P.ink,
         textWrap: 'pretty',
       }}>
-        “Most ad agencies guess. The good ones split-test. The best ones listen — to the actual words your customers use, before any of them turn into a creative brief.”
+        “Most brands guess. The good ones split-test. The best ones listen — to the actual words your customers use, before any of them turn into a creative brief.”
       </p>
       <div style={{ marginTop: 32, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
         <div style={{
@@ -654,8 +654,8 @@ function Manifesto() {
           color: P.cream, fontFamily: fSans, fontWeight: 600, fontSize: 14,
         }}>R</div>
         <div style={{ textAlign: 'left' }}>
-          <div style={{ fontFamily: fSans, fontSize: 14, fontWeight: 500, color: P.ink }}>The Custra founders</div>
-          <div style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>previously growth at Whoop, Caraway, Olipop</div>
+          <div style={{ fontFamily: fSans, fontSize: 14, fontWeight: 500, color: P.ink }}>Founder, Custra</div>
+          <div style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>previously Creative Stratergiest at Teabox</div>
         </div>
       </div>
     </section>
@@ -666,15 +666,15 @@ function Manifesto() {
 function FAQ() {
   const qs = [
     { q: 'When does Custra open up?',
-      a: 'We let in 30 brands a month, in batches. If you sign up today, you\'ll typically hear back within 2–4 weeks. Existing Shopify Plus brands and brands spending $30k+/mo on paid go to the front of the queue.' },
+      a: 'We are currently building and allowing only a few brands to test Custra, the brands that sign up now will get priority access to the beta phase rolling out soon. We only onboard brands spening $250k+ on Meta' },
     { q: 'What does it connect to?',
-      a: 'Shopify, Meta Ads, TikTok Ads, Google Ads, Klaviyo, Gorgias, Trustpilot, Junip, and Yotpo on day one. Stripe, Recharge, and Postscript are queued for the next batch. If you need something we don\'t have, just ask.' },
+      a: 'Meta Ads, TikTok Ads, Google Ads, Klaviyo, Gorgias, Trustpilot. If you need something we don\'t have, just ask.' },
     { q: 'Does Custra write the ads, or just suggest angles?',
-      a: 'Both. The angles are the core thing — they\'re what changes CAC. From any angle you can generate static ad copy, 30s video scripts, and email subject lines. We don\'t replace your designer or editor; we replace the blank page.' },
+      a: 'Both. The angles are the core thing — they\'re what changes CAC. From any angle you can generate static ad copy, video scripts. We don\'t replace your designer or editor; we replace the blank page.' },
     { q: 'What about my customers\' data?',
       a: 'Your data stays in your account. We never share it with other brands, never train shared models on your reviews or customers, and we\'re SOC 2 Type II in progress. Reviews are processed; customer PII never leaves your systems.' },
     { q: 'How much will it cost?',
-      a: 'Pricing is per-brand and scales with monthly ad spend, starting at $399/mo. Early access founders lock in their batch pricing for 12 months, with two extra brand slots free.' },
+      a: 'Pricing is per-brand and scales with monthly ad spend, Brands who register now for the Beta phase will get exclusive discount' },
   ];
   return (
     <section id="faq" style={{
@@ -687,7 +687,7 @@ function FAQ() {
           letterSpacing: '-0.03em', lineHeight: 1.05, margin: '14px 0 0',
           color: P.ink,
         }}>
-          Five questions, answered straight.
+          Common questions, answered straight.
         </h2>
       </div>
 
@@ -773,7 +773,7 @@ function FinalCTA() {
             type="email"
             name="email"
             required
-            placeholder="founder@yourbrand.com"
+            placeholder="name@yourbrand.com"
             style={{
               flex: 1, background: 'transparent', border: 0, outline: 'none',
               fontFamily: fSans, fontSize: 16, color: P.cream,
@@ -789,7 +789,7 @@ function FinalCTA() {
         </form>
 
         <div style={{ marginTop: 22, fontFamily: fMono, fontSize: 11, color: P.mutedDk, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-          No credit card · no spam · unsubscribe one click
+          · no spam · unsubscribe one click
         </div>
       </div>
     </section>
@@ -806,7 +806,7 @@ function Footer() {
     }}>
       <Lockup size={18} />
       <span style={{ fontFamily: fSans, fontSize: 13, color: P.muted }}>
-        © 2026 Custra Labs Inc. Made for D2C founders who'd rather listen than guess.
+        © 2026 Custra. Made for D2C fbrands who'd rather listen than guess.
       </span>
       <div style={{ display: 'flex', gap: 20 }}>
         <a href="#" style={{ fontFamily: fSans, fontSize: 13, color: P.muted, textDecoration: 'none' }}>X / Twitter</a>
