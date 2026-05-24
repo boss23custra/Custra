@@ -85,15 +85,210 @@ function Mono({ children, color = P.muted, size = 11 }) {
   );
 }
 
+function ResponsiveStyles() {
+  return (
+    <style>{`
+      @media (max-width: 900px) {
+        .site-nav {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+          gap: 18px !important;
+          padding: 22px 20px !important;
+        }
+
+        .site-nav-links {
+          gap: 14px !important;
+          width: 100% !important;
+          overflow-x: auto !important;
+          padding-bottom: 2px !important;
+        }
+
+        .site-nav-links a,
+        .site-nav-links span {
+          flex-shrink: 0 !important;
+        }
+
+        .hero-section {
+          margin-top: 0 !important;
+        }
+
+        .hero-inner {
+          padding: 72px 20px 112px !important;
+        }
+
+        .hero-watermark {
+          right: -230px !important;
+          bottom: -180px !important;
+          transform: scale(0.72) !important;
+          transform-origin: bottom right !important;
+        }
+
+        .hero-batch {
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          padding: 18px 20px 0 !important;
+          text-align: left !important;
+        }
+
+        .hero-title {
+          max-width: 100% !important;
+          font-size: 48px !important;
+          line-height: 1.02 !important;
+        }
+
+        .hero-copy {
+          max-width: 100% !important;
+          font-size: 17px !important;
+          line-height: 1.5 !important;
+        }
+
+        .waitlist-form {
+          max-width: 100% !important;
+          flex-direction: column !important;
+          gap: 8px !important;
+        }
+
+        .waitlist-input,
+        .waitlist-button {
+          width: 100% !important;
+        }
+
+        .waitlist-button {
+          min-height: 46px !important;
+        }
+
+        .social-proof {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+          gap: 12px !important;
+        }
+
+        .floating-panel-section {
+          margin-top: -56px !important;
+          padding: 0 16px !important;
+        }
+
+        .briefs-panel {
+          border-radius: 18px !important;
+          padding: 20px !important;
+        }
+
+        .panel-header,
+        .panel-footer,
+        .cases-heading {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+        }
+
+        .briefs-title {
+          font-size: 25px !important;
+          line-height: 1.08 !important;
+        }
+
+        .briefs-grid,
+        .steps-grid,
+        .cases-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .brief-card {
+          padding: 20px !important;
+        }
+
+        .brief-card-title {
+          font-size: 28px !important;
+        }
+
+        .page-section {
+          margin-top: 96px !important;
+          padding: 0 20px !important;
+        }
+
+        .section-title {
+          max-width: 100% !important;
+          font-size: 38px !important;
+          line-height: 1.05 !important;
+        }
+
+        .case-intro {
+          max-width: 100% !important;
+        }
+
+        .manifesto-text {
+          font-size: 34px !important;
+          line-height: 1.12 !important;
+        }
+
+        .founder-line {
+          align-items: flex-start !important;
+          max-width: 100% !important;
+        }
+
+        .founder-meta {
+          font-size: 9px !important;
+          line-height: 1.4 !important;
+        }
+
+        .faq-title {
+          font-size: 36px !important;
+        }
+
+        .faq-summary {
+          align-items: flex-start !important;
+          gap: 12px !important;
+          font-size: 17px !important;
+        }
+
+        .final-cta {
+          margin-top: 96px !important;
+          padding: 88px 20px 96px !important;
+        }
+
+        .final-title {
+          font-size: 48px !important;
+          line-height: 1.02 !important;
+        }
+
+        .site-footer {
+          align-items: flex-start !important;
+          flex-direction: column !important;
+          padding: 30px 20px !important;
+        }
+
+        .footer-links {
+          flex-wrap: wrap !important;
+          gap: 14px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .hero-title,
+        .final-title {
+          font-size: 42px !important;
+        }
+
+        .section-title {
+          font-size: 34px !important;
+        }
+
+        .manifesto-text {
+          font-size: 30px !important;
+        }
+      }
+    `}</style>
+  );
+}
+
 // ─── Nav ─────────────────────────────────────────────────────────────
 function Nav() {
   return (
-    <nav style={{
+    <nav className="site-nav" style={{
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       maxWidth: 1240, margin: '0 auto', padding: '28px 40px',
     }}>
       <Lockup size={24} />
-      <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+      <div className="site-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
         <a href="#how"   style={navLink}>How it works</a>
         <a href="#cases" style={navLink}>Case studies</a>
         <a href="#faq"   style={navLink}>FAQ</a>
@@ -118,26 +313,26 @@ const navLink = {
 // ─── Hero ────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section style={{
+    <section className="hero-section" style={{
       position: 'relative',
       background: P.ink, color: P.cream,
       overflow: 'hidden',
       marginTop: 12,
     }}>
       {/* watermark — bleeds off bottom-right */}
-      <div aria-hidden style={{
+      <div aria-hidden className="hero-watermark" style={{
         position: 'absolute', right: -120, bottom: -160, color: P.cream,
         opacity: 0.07, pointerEvents: 'none',
       }}>
         <CustraMark size={620} color={P.cream} opacity={1} />
       </div>
       {/* tiny mono crosshair top-right */}
-      <div style={{
+      <div className="hero-batch" style={{
         position: 'absolute', top: 32, right: 40,
         fontFamily: fMono, fontSize: 10, color: P.mutedDk, letterSpacing: '0.12em',
-      }}>BATCH 02 · MAY 2026 · 487 ON WAITLIST</div>
+      }}>BATCH 01 · MAY 2026 · 33 ON WAITLIST</div>
 
-      <div style={{
+      <div className="hero-inner" style={{
         position: 'relative', maxWidth: 1240, margin: '0 auto',
         padding: '120px 40px 140px',
       }}>
@@ -153,31 +348,32 @@ function Hero() {
           Early access · invite-only batches
         </div>
 
-        <h1 style={{
+        <h1 className="hero-title" style={{
           fontFamily: fSans, fontSize: 88, fontWeight: 600,
           letterSpacing: '-0.035em', lineHeight: 0.98,
           margin: 0, maxWidth: 940, color: P.cream,
         }}>
-          The ad angle that's{' '}
+          The ad angle that will{' '}
           <em style={{
             fontFamily: fSerif, fontStyle: 'italic', fontWeight: 400,
             letterSpacing: '-0.02em',
           }}>actually</em>{' '}
-          lowering your CAC.
+          lower your CAC.
         </h1>
 
-        <p style={{
+        <p className="hero-copy" style={{
           margin: '28px 0 0', maxWidth: 600,
           fontFamily: fSans, fontSize: 19, lineHeight: 1.55,
           color: P.cream2, fontWeight: 400,
           textWrap: 'pretty',
         }}>
-          Custra mines reviews, ad comments and customer DMs for the angles that convert — so your next creative test isn't a guess. Built for D2C founders running their own ads.
+          Custra mines reviews, ad comments, customer DMs and online communities for the ideas that convert into direct response ad angles — so your next creative test isn't a guess.
         </p>
 
         {/* email capture */}
         <form
-          onSubmit={(e) => submitWaitlist(e, "You're on the list — we'll be in touch.")}
+          className="waitlist-form"
+          onSubmit={(e) => submitWaitlist(e, "You're on the list. we'll be in touch.")}
           style={{
             marginTop: 36, display: 'flex', gap: 10, maxWidth: 520,
             background: 'rgba(255,255,255,0.06)',
@@ -186,17 +382,18 @@ function Hero() {
           }}
         >
           <input
+            className="waitlist-input"
             type="email"
             name="email"
             required
-            placeholder="founder@yourbrand.com"
+            placeholder="name@yourbrand.com"
             style={{
               flex: 1, background: 'transparent', border: 0, outline: 'none',
               fontFamily: fSans, fontSize: 16, color: P.cream,
               padding: '10px 14px',
             }}
           />
-          <button type="submit" style={{
+          <button className="waitlist-button" type="submit" style={{
             fontFamily: fSans, fontWeight: 500, fontSize: 15,
             background: P.cream, color: P.ink,
             border: 0, borderRadius: 9, padding: '10px 18px',
@@ -205,7 +402,7 @@ function Hero() {
         </form>
 
         {/* social proof row */}
-        <div style={{ marginTop: 22, display: 'flex', alignItems: 'center', gap: 14 }}>
+        <div className="social-proof" style={{ marginTop: 22, display: 'flex', alignItems: 'center', gap: 14 }}>
           <div style={{ display: 'flex' }}>
             {[
               { bg: P.peach },
@@ -223,7 +420,7 @@ function Hero() {
             ))}
           </div>
           <span style={{ fontFamily: fSans, fontSize: 14, color: P.cream2 }}>
-            <strong style={{ color: P.cream, fontWeight: 500 }}>487 D2C founders</strong> already on the list — batches roll out monthly.
+            <strong style={{ color: P.cream, fontWeight: 500 }}>33 D2C founders</strong> already on the list
           </span>
         </div>
       </div>
@@ -271,19 +468,19 @@ function Showcase() {
     : { bg: P.paper,     fg: P.inkSoft };
 
   return (
-    <section style={{
+    <section className="floating-panel-section" style={{
       position: 'relative',
       maxWidth: 1180, margin: '-80px auto 0', padding: '0 40px',
       zIndex: 2,
     }}>
-      <div style={{
+      <div className="briefs-panel" style={{
         background: '#fff', borderRadius: 24,
         border: `1px solid ${P.rule}`,
         padding: 28,
         boxShadow: '0 24px 80px rgba(11,15,26,0.18), 0 4px 16px rgba(11,15,26,0.06)',
       }}>
         {/* panel header */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 22, flexWrap: 'wrap', gap: 12 }}>
+        <div className="panel-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 22, flexWrap: 'wrap', gap: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <Lockup size={20} />
             <span style={{ height: 16, width: 1, background: P.rule }} />
@@ -295,14 +492,14 @@ function Showcase() {
                 width: 6, height: 6, borderRadius: '50%', background: '#22B86D',
                 boxShadow: '0 0 0 3px rgba(34,184,109,0.18)',
               }} />
-              Live · refreshed 4m ago
+              
             </span>
           </div>
         </div>
 
         {/* section heading */}
         <div style={{ marginBottom: 22, display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
-          <div style={{
+          <div className="briefs-title" style={{
             fontFamily: fSerif, fontStyle: 'italic',
             fontSize: 30, color: P.ink, letterSpacing: '-0.02em', lineHeight: 1,
           }}>Today's briefs — ready to ship.</div>
@@ -310,7 +507,7 @@ function Showcase() {
         </div>
 
         {/* three brief cards */}
-        <div style={{
+        <div className="briefs-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 16,
@@ -318,7 +515,7 @@ function Showcase() {
           {briefs.map((b) => {
             const s = statusStyle(b.winner);
             return (
-              <div key={b.n} style={{
+              <div className="brief-card" key={b.n} style={{
                 background: b.winner ? P.peachSoft : P.cream,
                 border: `1px solid ${b.winner ? '#C9C5F5' : P.rule}`,
                 borderRadius: 16,
@@ -341,7 +538,7 @@ function Showcase() {
                 </div>
 
                 {/* angle title (2-3 words) */}
-                <div style={{
+                <div className="brief-card-title" style={{
                   fontFamily: fSans, fontSize: 32, fontWeight: 600,
                   letterSpacing: '-0.03em', color: P.ink, lineHeight: 1.02,
                 }}>{b.title}</div>
@@ -402,7 +599,7 @@ function Showcase() {
         </div>
 
         {/* panel footer */}
-        <div style={{
+        <div className="panel-footer" style={{
           marginTop: 20, paddingTop: 18, borderTop: `1px solid ${P.rule}`,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10,
         }}>
@@ -500,12 +697,12 @@ function HowItWorks() {
     },
   ];
   return (
-    <section id="how" style={{
+    <section id="how" className="page-section" style={{
       maxWidth: 1240, margin: '160px auto 0', padding: '0 40px',
     }}>
       <div style={{ marginBottom: 56 }}>
         <Mono>How it works</Mono>
-        <h2 style={{
+        <h2 className="section-title" style={{
           fontFamily: fSans, fontSize: 56, fontWeight: 600,
           letterSpacing: '-0.03em', lineHeight: 1, margin: '14px 0 0', maxWidth: 820,
           color: P.ink,
@@ -516,7 +713,7 @@ function HowItWorks() {
         </h2>
       </div>
 
-      <div style={{
+      <div className="steps-grid" style={{
         display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28,
       }}>
         {steps.map((s, i) => (
@@ -554,19 +751,19 @@ function HowItWorks() {
 // ─── Case studies / proof ────────────────────────────────────────────
 function Cases() {
   const cases = [
-    { cat: 'Sleep & travel',  quote: '"You can sleep through it on a plane."',         cacBefore: '$24.60', cacAfter: '$14.20', roas: '4.8×', delta: -42 },
+    { cat: 'Sleep & travel',  quote: '"You can sleep through it on a plane."',         cacBefore: '$24.60', cacAfter: '$8.20', roas: '4.8×', delta: -42 },
     { cat: 'Direct coffee',   quote: '"It survives my dishwasher."',                    cacBefore: '$18.10', cacAfter: '$11.40', roas: '3.6×', delta: -37 },
     { cat: 'Skincare',        quote: '"It doesn\'t make my eyes water like the others."', cacBefore: '$31.20', cacAfter: '$19.80', roas: '3.1×', delta: -36 },
-    { cat: 'Pet food',        quote: '"My picky dog actually finished the bowl."',     cacBefore: '$22.50', cacAfter: '$15.20', roas: '2.9×', delta: -32 },
+    { cat: 'Pet food',        quote: '"My picky dog actually finished the bowl."',     cacBefore: '$22.50', cacAfter: '$11.20', roas: '2.9×', delta: -32 },
   ];
   return (
-    <section id="cases" style={{
+    <section id="cases" className="page-section" style={{
       maxWidth: 1240, margin: '160px auto 0', padding: '0 40px',
     }}>
-      <div style={{ marginBottom: 48, display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap' }}>
+      <div className="cases-heading" style={{ marginBottom: 48, display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, flexWrap: 'wrap' }}>
         <div>
           <Mono>Angles that landed</Mono>
-          <h2 style={{
+          <h2 className="section-title" style={{
             fontFamily: fSans, fontSize: 56, fontWeight: 600,
             letterSpacing: '-0.03em', lineHeight: 1, margin: '14px 0 0', maxWidth: 760,
             color: P.ink,
@@ -574,7 +771,7 @@ function Cases() {
             Real things customers <em style={{ fontFamily: fSerif, fontStyle: 'italic', fontWeight: 400 }}>actually</em> said. Real lift.
           </h2>
         </div>
-        <p style={{
+        <p className="case-intro" style={{
           margin: 0, maxWidth: 340,
           fontFamily: fSans, fontSize: 15, lineHeight: 1.55, color: P.inkSoft,
         }}>
@@ -582,7 +779,7 @@ function Cases() {
         </p>
       </div>
 
-      <div style={{
+      <div className="cases-grid" style={{
         display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 18,
       }}>
         {cases.map((c, i) => (
@@ -634,28 +831,28 @@ function Cases() {
 // ─── Editorial moment / manifesto ────────────────────────────────────
 function Manifesto() {
   return (
-    <section style={{
+    <section className="page-section" style={{
       maxWidth: 1000, margin: '160px auto 0', padding: '0 40px',
       textAlign: 'center',
     }}>
       <Mono>From the team</Mono>
-      <p style={{
+      <p className="manifesto-text" style={{
         fontFamily: fSerif, fontStyle: 'italic',
         fontSize: 56, fontWeight: 400, lineHeight: 1.05, letterSpacing: '-0.025em',
         margin: '24px 0 0', color: P.ink,
         textWrap: 'pretty',
       }}>
-        “Most ad agencies guess. The good ones split-test. The best ones listen — to the actual words your customers use, before any of them turn into a creative brief.”
+        “Most brands guess. The good ones split-test. The best ones listen — to the actual words your customers use, before any of them turn into a creative brief.”
       </p>
-      <div style={{ marginTop: 32, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+      <div className="founder-line" style={{ marginTop: 32, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
         <div style={{
           width: 36, height: 36, borderRadius: '50%', background: P.peach,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           color: P.cream, fontFamily: fSans, fontWeight: 600, fontSize: 14,
         }}>R</div>
         <div style={{ textAlign: 'left' }}>
-          <div style={{ fontFamily: fSans, fontSize: 14, fontWeight: 500, color: P.ink }}>The Custra founders</div>
-          <div style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>previously growth at Whoop, Caraway, Olipop</div>
+          <div style={{ fontFamily: fSans, fontSize: 14, fontWeight: 500, color: P.ink }}>Founder, Custra</div>
+          <div className="founder-meta" style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>previously Creative Stratergiest at Teabox</div>
         </div>
       </div>
     </section>
@@ -666,28 +863,28 @@ function Manifesto() {
 function FAQ() {
   const qs = [
     { q: 'When does Custra open up?',
-      a: 'We let in 30 brands a month, in batches. If you sign up today, you\'ll typically hear back within 2–4 weeks. Existing Shopify Plus brands and brands spending $30k+/mo on paid go to the front of the queue.' },
+      a: 'We are currently building and allowing only a few brands to test Custra, the brands that sign up now will get priority access to the beta phase rolling out soon. We only onboard brands spening $250k+ on Meta' },
     { q: 'What does it connect to?',
-      a: 'Shopify, Meta Ads, TikTok Ads, Google Ads, Klaviyo, Gorgias, Trustpilot, Junip, and Yotpo on day one. Stripe, Recharge, and Postscript are queued for the next batch. If you need something we don\'t have, just ask.' },
+      a: 'Meta Ads, TikTok Ads, Google Ads, Klaviyo, Gorgias, Trustpilot. If you need something we don\'t have, just ask.' },
     { q: 'Does Custra write the ads, or just suggest angles?',
-      a: 'Both. The angles are the core thing — they\'re what changes CAC. From any angle you can generate static ad copy, 30s video scripts, and email subject lines. We don\'t replace your designer or editor; we replace the blank page.' },
+      a: 'Both. The angles are the core thing — they\'re what changes CAC. From any angle you can generate static ad copy, video scripts. We don\'t replace your designer or editor; we replace the blank page.' },
     { q: 'What about my customers\' data?',
       a: 'Your data stays in your account. We never share it with other brands, never train shared models on your reviews or customers, and we\'re SOC 2 Type II in progress. Reviews are processed; customer PII never leaves your systems.' },
     { q: 'How much will it cost?',
-      a: 'Pricing is per-brand and scales with monthly ad spend, starting at $399/mo. Early access founders lock in their batch pricing for 12 months, with two extra brand slots free.' },
+      a: 'Pricing is per-brand and scales with monthly ad spend, Brands who register now for the Beta phase will get exclusive discount' },
   ];
   return (
-    <section id="faq" style={{
+    <section id="faq" className="page-section" style={{
       maxWidth: 880, margin: '160px auto 0', padding: '0 40px',
     }}>
       <div style={{ marginBottom: 40, textAlign: 'center' }}>
         <Mono>FAQ</Mono>
-        <h2 style={{
+        <h2 className="faq-title" style={{
           fontFamily: fSans, fontSize: 48, fontWeight: 600,
           letterSpacing: '-0.03em', lineHeight: 1.05, margin: '14px 0 0',
           color: P.ink,
         }}>
-          Five questions, answered straight.
+          Common questions, answered straight.
         </h2>
       </div>
 
@@ -698,7 +895,7 @@ function FAQ() {
             borderBottom: i === qs.length - 1 ? `1px solid ${P.rule}` : 'none',
             padding: '20px 4px',
           }}>
-            <summary style={{
+            <summary className="faq-summary" style={{
               cursor: 'pointer', listStyle: 'none',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
               fontFamily: fSans, fontSize: 19, fontWeight: 600,
@@ -725,7 +922,7 @@ function FAQ() {
 // ─── Final CTA ───────────────────────────────────────────────────────
 function FinalCTA() {
   return (
-    <section style={{
+    <section className="final-cta" style={{
       position: 'relative',
       marginTop: 160, padding: '120px 40px 140px',
       background: P.ink, color: P.cream, overflow: 'hidden',
@@ -745,7 +942,7 @@ function FinalCTA() {
 
       <div style={{ position: 'relative', maxWidth: 880, margin: '0 auto', textAlign: 'center' }}>
         <Mono color={P.mutedDk}>One more thing</Mono>
-        <h2 style={{
+        <h2 className="final-title" style={{
           fontFamily: fSans, fontSize: 84, fontWeight: 600,
           letterSpacing: '-0.035em', lineHeight: 1, margin: '20px 0 0',
           color: P.cream,
@@ -761,6 +958,7 @@ function FinalCTA() {
         </p>
 
         <form
+          className="waitlist-form"
           onSubmit={(e) => submitWaitlist(e, "You're on the list.")}
           style={{
             margin: '36px auto 0', display: 'flex', gap: 10, maxWidth: 520,
@@ -770,17 +968,18 @@ function FinalCTA() {
           }}
         >
           <input
+            className="waitlist-input"
             type="email"
             name="email"
             required
-            placeholder="founder@yourbrand.com"
+            placeholder="name@yourbrand.com"
             style={{
               flex: 1, background: 'transparent', border: 0, outline: 'none',
               fontFamily: fSans, fontSize: 16, color: P.cream,
               padding: '10px 14px',
             }}
           />
-          <button type="submit" style={{
+          <button className="waitlist-button" type="submit" style={{
             fontFamily: fSans, fontWeight: 500, fontSize: 15,
             background: P.peach, color: P.cream,
             border: 0, borderRadius: 9, padding: '10px 18px',
@@ -789,7 +988,7 @@ function FinalCTA() {
         </form>
 
         <div style={{ marginTop: 22, fontFamily: fMono, fontSize: 11, color: P.mutedDk, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-          No credit card · no spam · unsubscribe one click
+          · no spam · unsubscribe one click
         </div>
       </div>
     </section>
@@ -799,16 +998,16 @@ function FinalCTA() {
 // ─── Footer ──────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{
+    <footer className="site-footer" style={{
       maxWidth: 1240, margin: '0 auto', padding: '40px',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       flexWrap: 'wrap', gap: 16,
     }}>
       <Lockup size={18} />
       <span style={{ fontFamily: fSans, fontSize: 13, color: P.muted }}>
-        © 2026 Custra Labs Inc. Made for D2C founders who'd rather listen than guess.
+        © 2026 Custra. Made for D2C fbrands who'd rather listen than guess.
       </span>
-      <div style={{ display: 'flex', gap: 20 }}>
+      <div className="footer-links" style={{ display: 'flex', gap: 20 }}>
         <a href="#" style={{ fontFamily: fSans, fontSize: 13, color: P.muted, textDecoration: 'none' }}>X / Twitter</a>
         <a href="#" style={{ fontFamily: fSans, fontSize: 13, color: P.muted, textDecoration: 'none' }}>Docs</a>
         <a href="#" style={{ fontFamily: fSans, fontSize: 13, color: P.muted, textDecoration: 'none' }}>Privacy</a>
@@ -821,6 +1020,7 @@ function Footer() {
 function LandingApp() {
   return (
     <main>
+      <ResponsiveStyles />
       <Nav />
       <Hero />
       <Showcase />
