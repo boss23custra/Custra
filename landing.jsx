@@ -852,7 +852,7 @@ function Manifesto() {
         }}>R</div>
         <div style={{ textAlign: 'left' }}>
           <div style={{ fontFamily: fSans, fontSize: 14, fontWeight: 500, color: P.ink }}>Founder, Custra</div>
-          <div className="founder-meta" style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>previously Creative Stratergiest at Teabox</div>
+          <div className="founder-meta" style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>Creative Stratergiest at Teabox</div>
         </div>
       </div>
     </section>
