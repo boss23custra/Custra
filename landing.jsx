@@ -367,7 +367,7 @@ function Hero() {
           color: P.cream2, fontWeight: 400,
           textWrap: 'pretty',
         }}>
-Custra turns what your customers actually say into ready-to-ship creative concepts — each angle matched to the persona it's for, the format that persona responds to, the theme that's trending, and the moment that makes it land.  </p>
+Custra turns what your customers actually say into ready-to-ship creative concepts — each angle matched to the persona it's for, the format that persona responds to, the theme that's trending.  </p>
 
         {/* email capture */}
         <form
