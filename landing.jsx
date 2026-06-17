@@ -1004,7 +1004,7 @@ function Footer() {
     }}>
       <Lockup size={18} />
       <span style={{ fontFamily: fSans, fontSize: 13, color: P.muted }}>
-        © 2026 Custra. Made for D2C fbrands who'd rather listen than guess.
+        © 2026 Custra. Made for D2C brands who'd rather listen than guess.
       </span>
       <div className="footer-links" style={{ display: 'flex', gap: 20 }}>
         <a href="#" style={{ fontFamily: fSans, fontSize: 13, color: P.muted, textDecoration: 'none' }}>X / Twitter</a>
