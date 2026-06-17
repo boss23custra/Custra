@@ -367,8 +367,7 @@ function Hero() {
           color: P.cream2, fontWeight: 400,
           textWrap: 'pretty',
         }}>
-          Custra mines reviews, ad comments, customer DMs and online communities for the ideas that convert into direct response ad angles — so your next creative test isn't a guess.
-        </p>
+Custra turns what your customers actually say into ready-to-ship creative concepts — each angle matched to the persona it's for, the format that persona responds to, the theme that's trending, and the moment that makes it land.  </p>
 
         {/* email capture */}
         <form
@@ -849,7 +848,7 @@ function Manifesto() {
           width: 36, height: 36, borderRadius: '50%', background: P.peach,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           color: P.cream, fontFamily: fSans, fontWeight: 600, fontSize: 14,
-        }}>R</div>
+        }}>P</div>
         <div style={{ textAlign: 'left' }}>
           <div style={{ fontFamily: fSans, fontSize: 14, fontWeight: 500, color: P.ink }}>Founder, Custra</div>
           <div className="founder-meta" style={{ fontFamily: fMono, fontSize: 11, color: P.muted, letterSpacing: '0.04em', textTransform: 'uppercase' }}>Creative Stratergiest at Teabox</div>
